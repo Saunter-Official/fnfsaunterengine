@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://penguinmod.com/embed/editor?external=https%3A%2F%2Fstudio.penguinmod.com -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		
+		<meta property="theme-color" content="#51D3F4">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://penguinmod.com/favicon.ico">
+		<meta property="twitter:image" content="https://penguinmod.com/favicon.ico">
+
+		<link rel="icon" href="https://penguinmod.com/favicon.ico">
+		<meta name="viewport" content="width=device-width">
+		
+		<style>
+			.guidelines-warning-box {
+				padding: 8px;
+				border-radius: 4px;
+				border: 1px solid rgb(255, 153, 0);
+				background: rgb(255, 217, 0, 0.5);
+				color: black;
+			}
+			body.dark-mode .guidelines-warning-box {
+				color: white;
+				background: rgb(255, 217, 0, 0.2);
+			}
+
+			.profile-bio-emoji {
+			    width: 1.5rem;
+			    height: 1.5rem;
+			    object-fit: contain;
+			}
+			h1 .profile-bio-emoji {
+			    width: 1.8rem;
+			    height: 1.8rem;
+			}
+			em .profile-bio-emoji {
+			    transform: skew(-12deg, 0deg);
+			}
+			strong .profile-bio-emoji {
+			    filter: contrast(2);
+			}
+			s .profile-bio-emoji {
+			    filter: blur(2px);
+			}
+
+    		.donate-card-html p,
+    		.donate-card-html h1 {
+    		    margin-block: 0;
+    		}
+    		.donate-card-html h1 {
+    		    font-size: 48px;
+    		}
+		</style>
+	<link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/nodes/0.29bbf691.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/index.ed599675.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/nodes/1.31cef883.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/stores.8dae3896.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/singletons.007c0af2.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/NavMargin.793de6d8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/public.70d9f6e0.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/authentication.f2b02d51.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/_commonjsHelpers.de833af9.js"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/language.fe376988.js"><link rel="stylesheet" href="./NavMargin.3ee782c2.css"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/chunks/Button.6f00b939.js"><link rel="stylesheet" href="./Button.0a24db6e.css"><link rel="stylesheet" href="./1.e484700b.css"><link rel="modulepreload" as="script" crossorigin="" href="https://penguinmod.com/_app/immutable/nodes/10.9fa7483e.js"></head>
+	<body data-sveltekit-preload-data="hover" id="PAGE_BODY">
+		<script>
+			const body = document.getElementById("PAGE_BODY");
+			const isEmbed = location.pathname.replace(/\//gmi, "").startsWith("embed");
+
+			const checkAndApplyLauncher = () => {
+				// check for launcher params
+				const urlParams = new URLSearchParams(location.search);
+				const isLauncher = String(urlParams.get('using_launcher')) === 'true';
+				window._isPenguinModLauncher = false;
+				if (isLauncher) {
+					body.classList.add("launcher-mode");
+					window._isPenguinModLauncher = true;
+				}
+			};
+			const checkAndApplyAprilFools = () => {
+				// check local date or test params
+				const date = new Date(Date.now());
+				const urlParams = new URLSearchParams(location.search);
+				const isAprilFools = date.getMonth() === 3 && date.getDate() === 1; // month is 0 indexed for literally no reason
+				const runningLocal = String(urlParams.get('forceaprilfools')) === 'true' && location.hostname === 'localhost';
+				window._isAprilFools = isAprilFools || runningLocal;
+				if (isAprilFools || runningLocal) {
+					body.classList.add("april-fools");
+				}
+			};
+
+			let prefersDarkMode = false;
+			try {
+				prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			} catch {
+				prefersDarkMode = false;
+			}
+			const getDarkModeSetting = () => {
+				const savedDarkMode = localStorage.getItem('darkmode');
+				if (savedDarkMode !== null && savedDarkMode !== undefined) {
+					return String(savedDarkMode) === "true";
+				}
+				return prefersDarkMode;
+			};
+
+			const loop = () => {
+				const darkmode = isEmbed ?
+					location.hash.replace(/#/gmi, "") === "dark=true"
+					: getDarkModeSetting();
+				if (darkmode) {
+					body.classList.add("dark-mode");
+					body.style.background = "#111";
+					return;
+				}
+				body.classList.remove("dark-mode");
+				body.style.background = "";
+			}
+			setInterval(loop, 100);
+			loop();
+			
+			if (!isEmbed) {
+				checkAndApplyLauncher();
+				checkAndApplyAprilFools();
+			}
+			
+			// warning in case of people pasting random code here
+			console.log(
+				"%cSCAM ALERT! %cDo NOT paste things into here that other people sent you!",
+				"color:red;font-family:sans-serif;font-size:2rem;font-weight:900",
+				"color:white;font-family:sans-serif;font-size:1.75rem;font-weight:900;-webkit-text-stroke: .5px black"
+			);
+			console.log("If you don't know what this window does, EXIT NOW! People can use this to upload inappropriate projects under YOUR name, delete YOUR projects, and get YOU banned from PenguinMod!");
+		</script>
+		<div style="display: contents"> <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div></div>
+	<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8fde715e0ab3ef0f&quot;,&quot;version&quot;:&quot;2024.10.5&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;329f722c06034bc58b8b2eea66ca477e&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+
+</body></html>
