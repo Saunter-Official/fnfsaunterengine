@@ -1,0 +1,31 @@
+{
+    "charname":"dad",
+    "charicon":"dad",
+    "directory":"./source/characters/dad.pms",
+    "colorhuenumb":"50",
+    "colorsatnumb":"100",
+    "colorbrinumb":"100",
+    "anims":[
+        {"idle_frameAmt":"4"},
+        {"idle_FPS":"16"},
+        {"idle_frameNames":"idle"},
+        {"idle_Loop":"false"},
+        {"left_frameAmt":"3"},
+        {"left_FPS":"16"},
+        {"left_frameNames":"left"},
+        {"left_Loop":"false"},
+        {"right_frameAmt":"3"},
+        {"right_FPS":"16"},
+        {"right_frameNames":"right"},
+        {"right_Loop":"false"},
+        {"down_frameAmt":"3"},
+        {"down_FPS":"16"},
+        {"down_frameNames":"down"},
+        {"down_Loop":"false"},
+        {"up_frameAmt":"3"},
+        {"up_FPS":"16"},
+        {"up_frameNames":"up"},
+        {"up_Loop":"false"}
+    ]
+    
+}
