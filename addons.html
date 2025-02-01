@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://studio.penguinmod.com/addons.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Addon Settings - PenguinMod</title><style>body[splash-theme="dark"]:not(.tw-loaded) {
+        background: #111;
+      }</style><script defer="" referrerpolicy="origin" src="./addons_files/s.js.download"></script><script data-cfasync="false" nonce="e8e65fd5-ab0f-4817-a382-a8b562623e8e">try{(function(w,d){!function(j,k,l,m){if(j.zaraz)console.error("zaraz is loaded twice");else{j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz._v="5850";j.zaraz._n="e8e65fd5-ab0f-4817-a382-a8b562623e8e";j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const t of Object.entries(Object.entries(dataLayer).reduce(((u,v)=>({...u[1],...v[1]})),{})))zaraz.set(t[0],t[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const w=j.zaraz.q.shift();j[l].q.push(w)}r.defer=!0;for(const x of[localStorage,sessionStorage])Object.keys(x||{}).filter((z=>z.startsWith("_zaraz_"))).forEach((y=>{try{j[l]["z_"+y.slice(7)]=JSON.parse(x.getItem(y))}catch{j[l]["z_"+y.slice(7)]=x.getItem(y)}}));r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bs=>new Promise((bt=>{if(bs){bs.e&&bs.e.forEach((bu=>{try{const bv=d.querySelector("script[nonce]"),bw=bv?.nonce||bv?.getAttribute("nonce"),bx=d.createElement("script");bw&&(bx.nonce=bw);bx.innerHTML=bu;bx.onload=()=>{d.head.removeChild(bx)};d.head.appendChild(bx)}catch(by){console.error(`Error executing script: ${bu}\n`,by)}}));Promise.allSettled((bs.f||[]).map((bz=>fetch(bz[0],bz[1]))))}bt()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script><script>(function(w,d){})(window,document)</script><style type="text/css">/**
+ * Copyright (C) 2021 Thomas Weber
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/* #E5F0FF */
+
+/* #E9F1FC */
+
+/* #D9E3F2 */
+
+/* 90% transparent version of motion-primary */
+
+/* #FFFFFF */
+
+/* 25% transparent version of ui-white */
+
+/* 25% transparent version of ui-white */
+
+/* 25% transparent version of ui-white */
+
+/* 15% transparent version of black */
+
+/* #575E75 */
+
+/* #00c3ff */
+
+/* #007bc7 */
+
+/* 35% transparent version of motion-primary */
+
+/* 15% transparent version of motion-primary */
+
+/* opt-in theme overrides */
+
+/*top bar color when in dark mode*/
+
+/* #00c3ff */
+
+/* #007bc7 */
+
+/* #CF63CF */
+
+/* #BD42BD */
+
+/* #FFAB19 */
+
+/* #FF8C1A */
+
+/* #0FBD8C */
+
+/* #0FBD8C */
+
+/* #FF8C1A */
+
+/* #FFB366 */
+
+/* #FF8C1A */
+
+/* 35% transparent version of extensions-primary */
+
+/* opaque version of extensions-transparent, on white bg */
+
+/* lighter than motion-primary */
+
+body {
+    background-color: white;
+    color: black;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+body[theme="dark"] {
+    background-color: #222222;
+    color: white;
+    color-scheme: dark;
+}
+
+a[href] {
+    color: #2a67eb;
+    text-decoration: underline;
+}
+
+[theme="dark"] a[href] {
+    color: #6d9bff;
+}
+
+a:active, a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_container_1qNQ3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.settings_section_31t4Q {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.settings_header_Y9USz {
+    position: relative;
+    padding: 8px 20px;
+    background-color: #fcfcfc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+[theme="dark"] .settings_header_Y9USz {
+    background-color: #222222;
+}
+
+@media (max-width: 700px) {
+    .settings_header_Y9USz {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.settings_header_Y9USz .settings_section_31t4Q {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settings_button_2ovv0 {
+    color: #000;
+    background: #efefef;
+    border: 1px solid #acacac;
+    padding: 8px 12px;
+    border-radius: 4px;
+    outline: none;
+    height: 32px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.25s ease;
+    transition-property: background;
+    display: flex;
+    align-items: center;
+}
+
+[theme="dark"] .settings_button_2ovv0 {
+    color: #fff;
+    background: #222222;
+    border-color: #000;
+}
+
+.settings_button_2ovv0:hover {
+    background: #aaaaaa;
+}
+
+[theme="dark"] .settings_button_2ovv0:hover {
+    background: #151515;
+}
+
+.settings_button_2ovv0:active, .settings_button_2ovv0:focus-within {
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_search-container_24OhB {
+    display: flex;
+    background-color: #f0f0f0;
+    color: #222;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+}
+
+.settings_search-container_24OhB:focus-within {
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_search-input_9LNCl {
+    color: inherit;
+    width: 150px;
+    height: 16px;
+    padding: 10px 0 10px 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+/* legacy edge */
+
+.settings_search-input_9LNCl::-ms-clear {
+    display: none;
+}
+
+.settings_search-button_LceHy {
+    height: 36px;
+    width: 36px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(static/assets/6fb602003b4d9e845e84f77129346396.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[theme="dark"] .settings_search-container_24OhB {
+    color: white;
+    background-color: #111111;
+    border-color: #222222;
+}
+
+.settings_search-input_9LNCl:not([value=""]) ~ .settings_search-button_LceHy {
+    background-image: url(static/assets/e997e36ade408c75ef4424b928e10846.svg) !important;
+}
+
+.settings_feedback-button-outer_3RXeq {
+    background: #f0f0f0;
+    border: 1px solid #cecece;
+    color: #333 !important;
+    height: 36px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0 12px;
+    margin-left: 10px;
+    font-size: 12px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+[theme="dark"] .settings_feedback-button-outer_3RXeq {
+    background-color: white;
+    border-color: white;
+}
+
+.settings_feedback-button-outer_3RXeq:active, .settings_feedback-button-outer_3RXeq:focus-within {
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_feedback-button-inner_2h_ch {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+[theme="dark"] .settings_search-button_LceHy,
+[theme="dark"] .settings_addon-group-expand_1G6_X,
+[theme="dark"] .settings_extension-image_1HlEn,
+[theme="dark"] .settings_reset-button_1onc- img,
+[theme="dark"] .settings_reset-setting-button_-WLwd img {
+    filter: invert(100%);
+}
+
+.settings_addons_2LLFF {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 20px;
+    height: 100%;
+}
+
+@media (max-width: 700px) {
+    .settings_addons_2LLFF {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.settings_addon-group_3d-ZB {
+    margin: 0 0 10px 0;
+}
+
+.settings_addon-group-name_1h56B {
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.settings_addon-group-name_1h56B::after {
+    margin-left: 16px;
+    content: '';
+    border-top: 1px solid #cfcfcf;
+    width: 100px;
+    flex: 1;
+}
+
+[theme="dark"] .settings_addon-group-name_1h56B::after {
+    border-color: #333;
+}
+
+.settings_addon-group-expand_1G6_X {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.settings_addon-group-expand_1G6_X[data-open="true"] {
+    transform: scaleY(-1);
+}
+
+.settings_addon-group-name_1h56B:hover .settings_addon-group-expand_1G6_X {
+    background: #ccc;
+}
+
+.settings_addon_3Oi_z {
+    background: #f7f7f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    font-size: 14px;
+}
+
+.settings_addon-dirty_2o20T {
+    background: #ffeedf;
+}
+
+[theme="dark"] .settings_addon_3Oi_z {
+    background-color: #2a2a2a;
+    border-color: #333;
+}
+
+[theme="dark"] .settings_addon-dirty_2o20T {
+    background: rgb(39, 50, 53);
+}
+
+.settings_addon-header_271wJ {
+    padding: 0 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.settings_extension-image_1HlEn {
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+}
+
+.settings_addon-title_6MhRl {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.settings_addon-switch_2bf3g {
+    margin-right: 8px;
+}
+
+.settings_addon-title-text_3QjlP {
+
+}
+
+.settings_addon-id_2EeZw {
+    margin-left: 10px;
+}
+
+.settings_inline-description_SovV9 {
+    margin-left: 10px;
+    color: gray;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.settings_addon-operations_28nBd {
+    margin-left: auto;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.settings_reset-button_1onc- {
+    display: flex;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.settings_reset-button_1onc-:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.settings_reset-button_1onc-:active, .settings_reset-button_1onc-:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_reset-button-image_2Tgqe {
+    padding: 1px 0;
+    height: 16px;
+    width: 16px;
+}
+
+[theme="dark"] .settings_reset-button_1onc-:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.settings_switch_2V1f5 {
+    display: block;
+    background: #111;
+    width: 40px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s ease;
+    transition-property: background;
+}
+
+.settings_switch_2V1f5[state="on"] {
+    background: hsla(194, 100%, 50%, 1);
+}
+
+.settings_switch_2V1f5::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 5px;
+    top: 5px;
+    left: 5px;
+    transition: 0.25s ease;
+    transition-property: background, left;
+}
+
+[theme="dark"] .settings_switch_2V1f5::before {
+    background: #aaa;
+}
+
+.settings_switch_2V1f5[state="on"]::before {
+    background: #fff;
+    left: 25px;
+}
+
+.settings_switch_2V1f5:active, .settings_switch_2V1f5:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_tag-container_3yFc4 {
+    display: flex;
+    align-items: center;
+}
+
+.settings_tag_1c-GO {
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin-left: 10px;
+    border-bottom: 2px solid #111;
+    white-space: nowrap;
+}
+
+.settings_tag-recommended_2k7Kt {
+    color: white;
+    background-color: #175ef8;
+    border-color: #0e44b8;
+}
+
+.settings_tag-theme_PbNiB {
+    color: black;
+    background-color: #9ad4cf;
+    border-color: #628f8c;
+}
+
+.settings_tag-beta_26ywj {
+    color: white;
+    background-color: #fd662b;
+    border-color: #d84a12;
+}
+
+.settings_tag-easter-egg_2M8qE {
+    color: black;
+    background-color: #b9f38d;
+    border-color: #8fce5e;
+}
+
+.settings_tag-new_1g9ff {
+    color: white;
+    background: #b117f8;
+    border-color: #6f0073;
+}
+
+.settings_tag-danger_2g6El {
+    color: white;
+    background: #fd2b2b;
+    border-color: #d81212;
+}
+
+@media (max-width: 550px) {
+    .settings_tag_1c-GO:not(.settings_tag-beta_26ywj) {
+        display: none;
+    }
+}
+
+.settings_addon-details_2CKwd {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+[theme="dark"] .settings_addon-details_2CKwd {
+    color: #ddd;
+}
+
+.settings_credit-container_2mHq7 {
+
+}
+
+.settings_credit-title_3f-yX {
+    padding-right: 5px;
+}
+
+.settings_credit_3grR6 {
+
+}
+
+.settings_description_2MbZo {
+
+}
+
+.settings_notice_2q6Z2 {
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    background: rgba(154, 212, 207, 0.7);
+}
+
+.settings_notice-icon_2lAT7 {
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+}
+
+.settings_setting-container_2BA7o {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.settings_setting_2i2j- {
+    margin: 10px;
+    margin-right: 30px;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.settings_setting-label_2w3mJ {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #555;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+[theme="dark"] .settings_setting-label_2w3mJ {
+    color: #aaa;
+}
+
+.settings_setting_2i2j- input {
+    color: #000;
+    background: #efefef;
+    border: 1px solid #acacac;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: 0.25s ease;
+    transition-property: background;
+}
+
+[theme="dark"] .settings_setting_2i2j- input {
+    color: #fff;
+    background: #222222;
+    border: 1px solid #000;
+}
+
+.settings_setting_2i2j- input:focus, .settings_setting_2i2j- input:active {
+    outline: none;
+    border-color: hsla(194, 100%, 50%, 1);
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+}
+
+.settings_setting_2i2j- input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+.settings_setting_2i2j- input[type="checkbox"]:checked {
+    border-color: hsla(194, 100%, 50%, 1);
+    background-color: hsla(194, 100%, 50%, 1);
+    background-image: url(static/assets/70f8bee49a78f131d8dc87658809a684.svg);
+}
+
+.settings_setting_2i2j- input[type="checkbox"]:hover:not(:focus) {
+    border-color: hsla(203, 100%, 39%, 1);
+}
+
+.settings_setting_2i2j- input[type="checkbox"]:checked:hover {
+    border-color: hsla(203, 100%, 39%, 1);
+}
+
+.settings_setting_2i2j- input[type="number"] {
+    border-radius: 20px 0 0 20px;
+    font-size: 14px;
+    width: 75px;
+    height: 35px;
+    box-sizing: border-box;
+}
+
+.settings_setting_2i2j- input[type="color"] {
+    height: 30px;
+    width: 100px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.settings_reset-setting-button_-WLwd {
+    border-radius: 0 4px 4px 0px;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.settings_reset-setting-button_-WLwd img {
+    width: 20px;
+    height: 20px;
+}
+
+.settings_reset-setting-button_-WLwd[data-for-text-input="true"] {
+    height: 35px;
+    border-radius: 0 20px 20px 0;
+}
+
+.settings_select_sIZno {
+    display: flex;
+}
+
+.settings_select-option_32Zqa {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    background: #f0f0f0;
+    color: #000;
+    border: 1px solid #aaa;
+    border-right-width: 0;
+    transition: 0.25s ease;
+    transition-property: color, background, border;
+}
+
+[theme="dark"] .settings_select-option_32Zqa {
+    color: #fff;
+    background: #222222;
+    border-color: #000000;
+}
+
+.settings_select-option_32Zqa:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.settings_select-option_32Zqa:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-right-width: 1px;
+}
+
+.settings_select-option_32Zqa.settings_selected_38WtW {
+    color: white;
+    background: hsla(194, 100%, 50%, 1);
+}
+
+.settings_select-option_32Zqa:active, .settings_select-option_32Zqa:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px hsla(194, 100%, 50%, 0.35);
+    z-index: 10;
+}
+
+.settings_presets_3zawV {
+    width: 100%;
+}
+
+.settings_preset-button_3zYV3 {
+    margin-right: 10px;
+}
+
+.settings_footer_jjys0 {
+    color: #444;
+}
+
+[theme="dark"] .settings_footer_jjys0 {
+    color: #aaa;
+}
+
+.settings_unsupported-container_2vhiH {
+    margin-bottom: 10px;
+}
+
+.settings_unsupported-addon_1p57c {
+    padding-left: 5px;
+}
+
+.settings_version_2_cDA {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.settings_footer-buttons_xTSXH {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.settings_footer-buttons_xTSXH > .settings_button_2ovv0 {
+    margin-right: 10px;
+}
+
+.settings_reset-all-button_2Q-Zi {
+
+}
+
+.settings_export-button_2PWOM {
+
+}
+
+.settings_import-button_1NMJN {
+
+}
+
+.settings_no-results_3bDSs {
+    text-align: center;
+    font-style: italic;
+}
+
+.settings_dirty-outer_WmNYy {
+    display: flex;
+    position: absolute;
+    top: calc(100% - 8px);
+    left: 0;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    z-index: 10;
+    justify-content: center;
+    animation: settings_dirty-appear_2Rcif 0.2s ease;
+    pointer-events: none;
+}
+
+.settings_dirty-inner_2tglM {
+    padding: 8px;
+    background: #ffeedf;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+[theme="dark"] .settings_dirty-inner_2tglM {
+    background: rgb(39, 50, 53);
+    border-color: #222;
+}
+
+.settings_dirty-button_2adjE {
+    margin-left: 6px;
+}
+
+@keyframes settings_dirty-appear_2Rcif {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+</style><style type="text/css">/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
+audio,canvas,progress,video{display:inline-block;vertical-align:baseline}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+a{background-color:transparent}
+a:active,a:hover{outline:0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+h1{font-size:2em;margin:.67em 0}
+mark{background:#ff0;color:#000}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-0.5em}
+sub{bottom:-0.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:1em 40px}
+hr{box-sizing:content-box;height:0}
+pre{overflow:auto}
+code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
+button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}
+button{overflow:visible}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+input{line-height:normal}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}
+input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+textarea{overflow:auto}
+optgroup{font-weight:bold}
+table{border-collapse:collapse;border-spacing:0}
+td,th{padding:0}
+</style><script>(function(w,d){;w.zarazData.executed.push("Pageview");})(window,document)</script><script>(function(w,d){})(window,document)</script><script>(function(w,d){{(function(w,d){zaraz.__zarazMCListeners={"google-analytics_v4_oBNj":["visibilityChange"]};})(window,document);}})(window,document)</script><script>(function(w,d){{(function(w,d){zaraz.__zarazMCListeners={"google-analytics_v4_oBNj":["visibilityChange"]};})(window,document);}})(window,document)</script><script>(function(w,d){{(function(w,d){zaraz.__zarazMCListeners={"google-analytics_v4_oBNj":["visibilityChange"]};})(window,document);}})(window,document)</script></head><body splash-theme="dark" theme="dark" class="tw-loaded"><script>(function() {
+        try {var localTheme = localStorage.getItem('tw:theme');} catch (e) {}
+        if (localTheme ? localTheme === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) document.body.setAttribute('splash-theme', 'dark');
+      })();</script><div id="app"><div class="settings_container_1qNQ3"><div class="settings_header_Y9USz"><div class="settings_section_31t4Q"><div class="settings_search-container_24OhB"><input class="settings_search-input_9LNCl" placeholder="Search" aria-label="Search" spellcheck="false" value=""><div class="settings_search-button_LceHy"></div></div><a href="https://discord.gg/NZ9MBMYTZh" target="_blank" rel="noreferrer" class="settings_feedback-button-outer_3RXeq"><span class="settings_feedback-button-inner_2h_ch">Addon Feedback</span></a></div></div><div class="settings_addons_2LLFF"><div class="settings_section_31t4Q"><div><div class="settings_addon-group_3d-ZB"><button class="settings_addon-group-name_1h56B"><img class="settings_addon-group-expand_1G6_X" src="./addons_files/7c9434c4f1f44e3d198db3bc77305fff.svg" data-open="true" alt="">New (5)</button><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Extend wrapped C blocks</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-beta_26ywj">Beta</span><span class="settings_tag_1c-GO settings_tag-new_1g9ff">New!</span></span><div class="settings_inline-description_SovV9">Makes C blocks extend when wrapping them around blocks, like in Scratch 2.0.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Project volume slider</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span><span class="settings_tag_1c-GO settings_tag-new_1g9ff">New!</span></span><div class="settings_inline-description_SovV9">Adds a volume slider next to the green flag controls.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Costume editor snapping</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-new_1g9ff">New!</span></span><div class="settings_inline-description_SovV9">Snap objects in the costume editor to bounding boxes and vector nodes.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Collapsing sprite properties</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span><span class="settings_tag_1c-GO settings_tag-new_1g9ff">New!</span></span><div class="settings_inline-description_SovV9">Hides the sprite properties panel by default, like in Scratch 2.0. Use the info button on the currently selected sprite or double-click a sprite to show the properties panel again. To re-hide it, use the collapse button in the properties panel or double-click a sprite.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Always show number pad</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-new_1g9ff">New!</span></span><div class="settings_inline-description_SovV9">Show Scratch's number pad input when editing number fields on all devices, instead of only touchscreen devices.</div><div class="settings_addon-operations_28nBd"></div></div></div></div><div class="settings_addon-group_3d-ZB"><button class="settings_addon-group-name_1h56B"><img class="settings_addon-group-expand_1G6_X" src="./addons_files/7c9434c4f1f44e3d198db3bc77305fff.svg" data-open="true" alt="">Others (59)</button><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Cat blocks</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Brings back editor cat hat blocks from April Fools 2020.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Developer tools</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds new menu options to the editor: copy/paste blocks, better clean up, and more!</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>griffpatch</span></span></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/editor-devtools/enableCleanUpPlus" class="settings_setting-label_2w3mJ">Enhance "Clean up Blocks"</label><input id="setting/editor-devtools/enableCleanUpPlus" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/editor-devtools/enablePasteBlocksAtMouse" class="settings_setting-label_2w3mJ">Paste blocks at mouse cursor</label><input id="setting/editor-devtools/enablePasteBlocksAtMouse" type="checkbox" checked=""></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Editor find bar</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds a find bar to find and jump to scripts, costumes and sounds next to the sounds tab. Use Ctrl+Left and Ctrl+Right in the code area to navigate to previous or next visited position after using the find bar.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>griffpatch</span>, </span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/thecolaber/" target="_blank" rel="noreferrer">TheColaber</a></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>This addon was previously part of the "developer tools" addon but has moved here.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Insert blocks by name</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Middle click on the code area, use Ctrl+Space or Shift+Click to bring up a floating input box where you can type the name of a block (or parts of it) and drag the block into the code area. Hold Shift while dragging to avoid closing the box when adding multiple blocks at once.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>griffpatch</span>, </span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/TheColaber/" target="_blank" rel="noreferrer">TheColaber</a>, </span><span class="settings_credit_3grR6"><span>JeremyGamer13</span></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>This addon was previously part of the "developer tools" addon but has moved here.</div></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>Changing the "Max Object Variants" will limit the amount of results that just use a different costume, sprite, sound or menu option selected in the block.</div></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/middle-click-popup/popup_scale" class="settings_setting-label_2w3mJ">Popup Block Size</label><input id="setting/middle-click-popup/popup_scale" type="number" min="1" max="100" step="1" value="48"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/middle-click-popup/popup_width" class="settings_setting-label_2w3mJ">Popup Default Width</label><input id="setting/middle-click-popup/popup_width" type="number" min="1" max="100" step="1" value="16"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/middle-click-popup/popup_max_height" class="settings_setting-label_2w3mJ">Popup Max Search Height</label><input id="setting/middle-click-popup/popup_max_height" type="number" min="1" max="100" step="1" value="40"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/middle-click-popup/popup_max_search" class="settings_setting-label_2w3mJ">Max Search Results</label><input id="setting/middle-click-popup/popup_max_search" type="number" min="1" max="1000" step="1" value="100"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/middle-click-popup/popup_max_variants" class="settings_setting-label_2w3mJ">Max Object Variants</label><input id="setting/middle-click-popup/popup_max_variants" type="number" min="1" max="1000" step="1" value="7"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Jump to custom block definition</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Allows you to jump to a custom block's definition using the middle mouse button or Shift+Click on the block.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>griffpatch</span></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>This addon was previously part of the "developer tools" addon but has moved here.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Searchable dropdowns</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Allows you to search block dropdowns.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Block palette category icons</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Adds icons inside the colored circles that identify block categories.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Auto-hiding block palette</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_inline-description_SovV9">Hides the block palette if not hovered. Click the lock icon to lock it in place temporarily. Alternatively, use "category click" mode.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Project video recorder</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds a "start recording" button to the editor menu bar that allows you to record the project's stage.</div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">File drag and drop</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Lets you drag images and sounds from your file manager into the sprite pane or costume/sound list. You can also drag text files into lists or "ask and wait" question inputs.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>Sheep_maker</span></span></div><div class="settings_setting-container_2BA7o"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Debugger</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-beta_26ywj">Beta</span></span><div class="settings_inline-description_SovV9">Adds a new "debugger" window to the editor. Allows for logging into the "Logs" tab of the debugger window using the "log", "warn" and "error" blocks.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Muted project player mode</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Ctrl+Click the green flag to mute/unmute the project.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/TheColaber/" target="_blank" rel="noreferrer">TheColaber</a></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>On macOS, use the Cmd key instead of the Ctrl key.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Clone counter</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_inline-description_SovV9">Adds a counter above the stage in the editor which shows the total amount of clones.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Mouse position</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_inline-description_SovV9">Displays your mouse x/y position above the stage in the editor.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Hex color picker</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds hex code inputs to color pickers.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>Richie Bendall</span>, </span><span class="settings_credit_3grR6"><span>apple502j</span></span></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Sprite deletion confirmation</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_inline-description_SovV9">Asks if you're sure when deleting a sprite inside a project.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Block count</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Shows the total number of blocks in a project in the editor menu bar. Previously part of "sprite and script count".</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Onion skinning</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Shows transparent overlays of previous or next costumes when editing a costume. Controlled by buttons under the costume editor by the zoom buttons.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/default" class="settings_setting-label_2w3mJ">Enable by default</label><input id="setting/onion-skinning/default" type="checkbox"></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/previous" class="settings_setting-label_2w3mJ">Default previous costumes</label><input id="setting/onion-skinning/previous" type="number" min="0" max="100" step="1" value="1"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/next" class="settings_setting-label_2w3mJ">Default next costumes</label><input id="setting/onion-skinning/next" type="number" min="0" max="100" step="1" value="0"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/opacity" class="settings_setting-label_2w3mJ">Opacity (%)</label><input id="setting/onion-skinning/opacity" type="number" min="0" max="100" step="1" value="25"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/opacityStep" class="settings_setting-label_2w3mJ">Opacity Step (%)</label><input id="setting/onion-skinning/opacityStep" type="number" min="0" max="100" step="1" value="10"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset" data-for-text-input="true"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/layering" class="settings_setting-label_2w3mJ">Default layering</label><div class="settings_select_sIZno"><button class="settings_select-option_32Zqa settings_selected_38WtW">Front</button><button class="settings_select-option_32Zqa">Behind</button></div></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/mode" class="settings_setting-label_2w3mJ">Default mode</label><div class="settings_select_sIZno"><button class="settings_select-option_32Zqa settings_selected_38WtW">Merge images</button><button class="settings_select-option_32Zqa">Color tint</button></div></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/beforeTint" class="settings_setting-label_2w3mJ">Previous costume tint</label><input type="color" id="setting/onion-skinning/beforeTint" value="#FF0000"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div><div class="settings_setting_2i2j-"><label for="setting/onion-skinning/afterTint" class="settings_setting-label_2w3mJ">Next costume tint</label><input type="color" id="setting/onion-skinning/afterTint" value="#0000FF"><button class="settings_button_2ovv0 settings_reset-setting-button_-WLwd" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" alt="Reset"></button></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable default costume editor colors</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Changes the default colors and outline size used by the costume editor.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Bitmap images copying</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Allows you to copy a bitmap image from the costume editor into the system clipboard, so that you can paste it in other websites or software.</div><div class="settings_notice_2q6Z2" type="notice"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>"Right click → copy" is not supported. You must press Ctrl+C while a bitmap image is selected.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">2D color picker</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Replaces saturation and brightness sliders in the costume editor with a 2D color picker. Hold Shift while dragging the cursor to change the values on a single axis.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">HD image uploads</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-beta_26ywj">Beta</span></span><div class="settings_inline-description_SovV9">Adds a new button above the "upload costume" button that automatically converts uploaded bitmap images into SVG (vector) images to avoid losing quality.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Select stage colors in the costume editor</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Allows the costume editor's eye dropper to also pick colors from the stage.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable block shape</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Adjust the padding, corner radius, and notch height of blocks.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Alternating nested block colors</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Makes blocks of the same category alternate between lighter and darker shades when nested inside each other. This is also known as zebra striping.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable block colors</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Edit block colors for each category in the editor.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable block text style</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Changes the thickness of the text on blocks and optionally adds a text shadow.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Colored context menus</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Makes block right click context menus colorful.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Display stage on left side</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Moves the stage to the left side of the editor, like in Scratch 2.0.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Reverse order of project controls</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Moves the green flag and stop buttons to the right and the full screen button to the left, like in Scratch 2.0.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Search sprites by name</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Adds a search box to the sprite pane to search for sprites by name.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Gamepad support</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Interact with projects using a USB or Bluetooth controller/gamepad.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Editor sound effects</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Plays sound effects when you connect or delete blocks.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Sprite folders</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds folders to the sprite pane, as well as costume and sound lists. To create a folder, right click any sprite and click "create folder". Click a folder to open or close it. Right click a sprite to see what folders you can move it to, or alternatively drag and drop it into an open folder. This feature works by adding "[folderName]//" at the beginning of the names for your sprites.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div><div class="settings_notice_2q6Z2" type="notice"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>Users with this feature enabled will be able to see the folders in your project. Anyone else will see sprite lists normally (no folders).</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Block switching</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Right click on a block to switch it to a related block.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span>, </span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/pufferfish101007/" target="_blank" rel="noreferrer">pufferfish101007</a>, </span><span class="settings_credit_3grR6"><a href="https://penguinmod.com/profile?user=JGamerTesting" target="_blank" rel="noreferrer">JeremyGamer13</a></span></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/block-switching/motion" class="settings_setting-label_2w3mJ">Motion blocks</label><input id="setting/block-switching/motion" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/looks" class="settings_setting-label_2w3mJ">Looks blocks</label><input id="setting/block-switching/looks" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/sound" class="settings_setting-label_2w3mJ">Sound blocks</label><input id="setting/block-switching/sound" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/event" class="settings_setting-label_2w3mJ">Event blocks</label><input id="setting/block-switching/event" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/control" class="settings_setting-label_2w3mJ">Control blocks</label><input id="setting/block-switching/control" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/operator" class="settings_setting-label_2w3mJ">Operator blocks</label><input id="setting/block-switching/operator" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/sensing" class="settings_setting-label_2w3mJ">Sensing blocks</label><input id="setting/block-switching/sensing" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/data" class="settings_setting-label_2w3mJ">Data blocks</label><input id="setting/block-switching/data" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/extension" class="settings_setting-label_2w3mJ">Extension blocks</label><input id="setting/block-switching/extension" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/customargs" class="settings_setting-label_2w3mJ">Custom block arguments</label><input id="setting/block-switching/customargs" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/customargsmode" class="settings_setting-label_2w3mJ">Shown custom block arguments options</label><div class="settings_select_sIZno"><button class="settings_select-option_32Zqa settings_selected_38WtW">Arguments in own custom block</button><button class="settings_select-option_32Zqa">Arguments in all custom blocks in sprite</button></div></div><div class="settings_setting_2i2j-"><label for="setting/block-switching/noop" class="settings_setting-label_2w3mJ">Show option to change block to self</label><input id="setting/block-switching/noop" type="checkbox" checked=""></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Automatically add extensions</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Auto-shows music, pen, and other extensions in the block category menu in the editor.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable code area zoom</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Choose custom settings for the minimum, maximum, speed, and start size of the zoom of scripts in the code area, and autohide the controls.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Customizable new sprite position</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Change the default x/y position of new sprites.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Save blocks as image</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Right click the code area to export blocks as SVG/PNG images.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/969aaca3d7c0ff67b664b24c2652fb12.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Remove curved stage border</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-theme_PbNiB">Theme</span></span><div class="settings_inline-description_SovV9">Removes the curved border around the stage, allowing you to see the corners.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Block transparency</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Adjust the transparency for blocks in the editor, with separate options for orphaned blocks (those without a hat block at the top) and blocks that are being dragged.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Paint costume by default</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-recommended_2k7Kt">Recommended</span></span><div class="settings_inline-description_SovV9">Changes the default action of "Choose a Sprite/Costume/Backdrop/Sound" buttons, which open the library by default.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Grab single block with Ctrl key</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds the ability to drag a single block out of the middle of a script (instead of the entire stack attached below it) while holding the Ctrl key.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/lisa_wolfgang/" target="_blank" rel="noreferrer">lisa_wolfgang</a>, </span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>On macOS, use the Cmd key instead of the Ctrl key.</div></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>If "flip controls" is enabled, grabbing blocks individually will be the default behavior. Hold Ctrl to drag the entire stack.</div></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/block-cherry-picking/invertDrag" class="settings_setting-label_2w3mJ">Flip controls</label><input id="setting/block-cherry-picking/invertDrag" type="checkbox"></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Hide new variables</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Do not automatically create monitors for newly created variables or lists.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Extra key options</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-beta_26ywj">Beta</span></span><div class="settings_inline-description_SovV9">Adds more keys to the "key () pressed?" and "when () key pressed" block dropdowns, such as enter, dot, comma, and more. These keys will work even for users who do not have this addon.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Hide delete button</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Hides delete button (trash can icon) from sprites, costumes and sounds. They can still be deleted using the right click context menu.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Do not automatically space overlapping scripts</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Allows scripts to be moved and modified without causing overlapping scripts to move around.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Non-draggable sprites in editor</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Removes the ability to drag sprites around on the stage in the editor, except those explicitly set as draggable. Hold Shift while dragging a sprite to move it normally.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Move costume to top or bottom</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Adds options to the right click context menu for costumes and sounds to move them to the top or the bottom of the list.</div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>This addon was previously part of the "developer tools" addon but has moved here.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Do not shift pasted items</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Paste copied items at their original position instead of shifted slightly in the costume editor.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Duplicate script with Alt key</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Quickly duplicate a script by dragging it while holding the Alt key. Hold Ctrl as well to only duplicate a single block instead of the entire stack attached below it.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div><div class="settings_notice_2q6Z2"><div><img class="settings_notice-icon_2lAT7" src="./addons_files/b987c9e2c37b17bd7c97f1fa47257d7e.svg" alt="" draggable="false"></div><div>On macOS, use the Option key instead of the Alt key and Command key instead of the Control key.</div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Switch variables between "For all sprites" and "For this sprite only"</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Adds more options when renaming an existing variable or list: allows changing between "For all sprites" and "For this sprite only" and whether variables are stored in the cloud. Also adds a new option when right clicking a variable/list to quickly change its scope.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="on" role="checkbox" aria-checked="true" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Editor comment previews</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_addon-operations_28nBd"><button class="settings_reset-button_1onc-" title="Reset"><img src="./addons_files/1640b6d968e0a0e13bc3c309a616deaa.svg" class="settings_reset-button-image_2Tgqe" alt="Reset" draggable="false"></button></div></div><div class="settings_addon-details_2CKwd"><div class="settings_description_2MbZo">Allows you to preview the contents of comments by hovering over collapsed comments and blocks. You can use this to view comments that are off-screen, identify a loop block from the bottom by its preview, fit many long comments in a small space, and more.</div><div class="settings_credit-container_2mHq7"><span class="settings_credit-title_3f-yX">Credits:</span><span class="settings_credit_3grR6"><a href="https://scratch.mit.edu/users/lisa_wolfgang/" target="_blank" rel="noreferrer">lisa_wolfgang</a>, </span><span class="settings_credit_3grR6"><span>GarboMuffin</span></span></div><div class="settings_setting-container_2BA7o"><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/hover-view" class="settings_setting-label_2w3mJ">Hover collapsed comments to preview</label><input id="setting/editor-comment-previews/hover-view" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/hover-view-block" class="settings_setting-label_2w3mJ">Hover blocks to preview attached comments</label><input id="setting/editor-comment-previews/hover-view-block" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/hover-view-procedure" class="settings_setting-label_2w3mJ">Hover custom blocks to preview definition comments</label><input id="setting/editor-comment-previews/hover-view-procedure" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/delay" class="settings_setting-label_2w3mJ">Delay duration</label><div class="settings_select_sIZno"><button class="settings_select-option_32Zqa">None</button><button class="settings_select-option_32Zqa settings_selected_38WtW">Short</button><button class="settings_select-option_32Zqa">Long</button></div></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/follow-mouse" class="settings_setting-label_2w3mJ">Follow mouse</label><input id="setting/editor-comment-previews/follow-mouse" type="checkbox" checked=""></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/reduce-transparency" class="settings_setting-label_2w3mJ">Reduce transparency</label><input id="setting/editor-comment-previews/reduce-transparency" type="checkbox"></div><div class="settings_setting_2i2j-"><label for="setting/editor-comment-previews/reduce-animation" class="settings_setting-label_2w3mJ">Reduce animation</label><input id="setting/editor-comment-previews/reduce-animation" type="checkbox"></div></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Two-column category menu</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Splits the block category menu into two columns and moves it to the top of the block palette, like in Scratch 2.0.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Snap scripts to grid</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Drag a script to automatically align its position to the code area dots.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Enhanced full screen</div></label><span class="settings_tag-container_3yFc4"><span class="settings_tag_1c-GO settings_tag-beta_26ywj">Beta</span></span><div class="settings_inline-description_SovV9">Fixes some undesired effects in the project player's full screen mode, opens it in your browser's full screen mode, and hides the green flag toolbar.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Hide stage and sprite pane</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Adds a button next to the "small stage" and "large stage" buttons that hides the stage and the sprite pane, making the code area much larger.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Keep block comment connections straight</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Forces block comments to always be connected to their source block by a horizontal straight line, not at an angle.</div><div class="settings_addon-operations_28nBd"></div></div></div><div class="settings_addon_3Oi_z"><div class="settings_addon-header_271wJ"><label class="settings_addon-title_6MhRl"><div class="settings_addon-switch_2bf3g"><button class="settings_switch_2V1f5" state="off" role="checkbox" aria-checked="false" tabindex="0"></button></div><img class="settings_extension-image_1HlEn" src="./addons_files/6f52bcc0310181641bac6fec51c69e13.svg" draggable="false" alt=""><div class="settings_addon-title-text_3QjlP">Remove Back to Home button</div></label><span class="settings_tag-container_3yFc4"></span><div class="settings_inline-description_SovV9">Removes the Back to Home button from the menu bar.</div><div class="settings_addon-operations_28nBd"></div></div></div></div><div class="settings_addon-group_3d-ZB"><button class="settings_addon-group-name_1h56B"><img class="settings_addon-group-expand_1G6_X" src="./addons_files/7c9434c4f1f44e3d198db3bc77305fff.svg" data-open="false" alt="">Dangerous (2)</button></div></div><div class="settings_footer-buttons_xTSXH"><button class="settings_button_2ovv0 settings_reset-all-button_2Q-Zi">Reset all</button><button class="settings_button_2ovv0 settings_export-button_2PWOM">Export settings</button><button class="settings_button_2ovv0 settings_import-button_1NMJN">Import settings</button></div><footer class="settings_footer_jjys0"><span class="settings_version_2_cDA">Addons version 7fcab09</span></footer></div></div></div></div><script src="./addons_files/vendors~addon-settings~credits~editor~embed~fullscreen~player~playground.776731c29ce8272b5790.js.download"></script><script src="./addons_files/addon-settings~addons~editor~fullscreen~player~playground.1eaaa688189b274169ed.js.download"></script><script src="./addons_files/addon-settings.7fbaed1e0c5c3fac32e5.js.download"></script><script defer="" src="./addons_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;90b18652496cbea0&quot;,&quot;version&quot;:&quot;2025.1.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;329f722c06034bc58b8b2eea66ca477e&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+</body></html>
