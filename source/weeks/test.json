@@ -1,0 +1,10 @@
+{
+    "weekname":"Week 1",
+    "weekimage?":"true",
+    "weekimgname":"test",
+    "weekBG":"stage",
+    "weekCharacters":["placeholder"],
+    "songs":["Test"],
+    "difficulties":["normal"],
+    "weekComment":"Test"
+}
